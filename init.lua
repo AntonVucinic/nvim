@@ -3,7 +3,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed
-vim.g.have_nerd_font = true
+vim.g.have_nerd_font = false
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -340,6 +340,7 @@ require('lazy').setup({
         pyright = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         hls = {},
+        rust_analyzer = {},
 
         lua_ls = {
           -- cmd = {...},
@@ -384,6 +385,7 @@ require('lazy').setup({
             require('lspconfig')[server_name].setup(server)
           end,
           hls = function() end,
+          rust_analyzer = function() end,
         },
       }
     end,
@@ -584,7 +586,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc', 'haskell' },
+      ensure_installed = { 'bash', 'c', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc', 'haskell', 'rust' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
