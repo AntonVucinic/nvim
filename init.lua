@@ -68,7 +68,7 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 2
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -286,6 +286,7 @@ require('lazy').setup({
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
+      -- TODO: put it at top right corner when cursor is at the bottom of the screen
       { 'j-hui/fidget.nvim', opts = {} },
 
       -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
@@ -354,7 +355,6 @@ require('lazy').setup({
         clangd = {},
         pyright = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-        hls = {},
         rust_analyzer = {},
 
         lua_ls = {
@@ -371,6 +371,7 @@ require('lazy').setup({
             },
           },
         },
+        svelte = {},
       }
 
       -- Ensure the servers and tools above are installed
